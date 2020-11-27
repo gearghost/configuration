@@ -1,0 +1,11 @@
+coc-clangd
+coc-css
+coc-go
+coc-highlight
+coc-html
+coc-json
+coc-lists
+coc-markdownlint
+coc-python
+coc-sinppets
+coc-tsserver
