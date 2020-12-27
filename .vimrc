@@ -32,7 +32,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup',{'rtp':'vim/'}
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'fatih/vim-go'
 Plugin 'Lokaltog/vim-powerline'
@@ -54,19 +54,18 @@ call plug#end()
 filetype plugin indent on
 
 let mapleader = ','
-nnoremap <leader>d :NERDTreeToggle<CR>
+"nnoremap <leader>d :NERDTreeToggle<CR>
 
 nnoremap <leader>t :TagbarToggle<CR>
 
 nnoremap <leader>x :sh<CR>
 
+nnoremap <leader>h :noh<CR>
+
 let g:tagbar_width=27
 
 let g:go_def_mode = 'gopls'
 let g:go_info_mode = 'gopls'
-
-nnoremap <C-]> :GoDef<CR>
-nnoremap <C-o> :GoDefPop 1<CR>
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -232,3 +231,32 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+"gotags
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
