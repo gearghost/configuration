@@ -20,24 +20,12 @@ set nowrap
 set incsearch
 set ai
 set hlsearch
+
 highlight Comment ctermfg=green
 
-colorscheme darktango
+colorscheme 0x7A69_dark
 set nocompatible
 filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'rstacruz/sparkup',{'rtp':'vim/'}
-"Plugin 'scrooloose/nerdtree'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'fatih/vim-go'
-Plugin 'Lokaltog/vim-powerline'
-
-call vundle#end()
 
 call plug#begin ('~/.vim/plugged')
 
@@ -48,13 +36,20 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'fatih/vim-go'
+Plug 'flazz/vim-colorschemes'
+Plug 'tpope/vim-fugitive'
+Plug 'Lokaltog/vim-powerline'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 call plug#end()
 
 filetype plugin indent on
 
 let mapleader = ','
-"nnoremap <leader>d :NERDTreeToggle<CR>
+
+nnoremap <leader>d :NERDTreeToggle<CR>
 
 nnoremap <leader>t :TagbarToggle<CR>
 
