@@ -40,8 +40,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'fatih/vim-go'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-fugitive'
-Plug 'Lokaltog/vim-powerline'
+Plug 'vim-airline/vim-airline'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
@@ -61,6 +62,8 @@ let g:tagbar_width=27
 
 let g:go_def_mode = 'gopls'
 let g:go_info_mode = 'gopls'
+
+let g:NERDSpaceDelims=1
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
