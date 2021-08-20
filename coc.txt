@@ -3,9 +3,10 @@ coc-css
 coc-go
 coc-highlight
 coc-html
+coc-jedi
 coc-json
 coc-lists
 coc-markdownlint
-coc-python
-coc-sinppets
+coc-sh
+coc-snippets
 coc-tsserver
