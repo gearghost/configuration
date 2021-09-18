@@ -58,6 +58,14 @@ nnoremap <leader>x :sh<CR>
 
 nnoremap <leader>h :noh<CR>
 
+nnoremap <leader>A :Ag<CR>
+
+nnoremap <leader>R :Rg<CR>
+
+nnoremap <leader>C :Commits<CR>
+
+nnoremap <leader>T :Tags<CR>
+
 let g:tagbar_width=27
 
 let g:go_def_mode = 'gopls'
