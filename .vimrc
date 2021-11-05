@@ -20,6 +20,8 @@ set nowrap
 set incsearch
 set ai
 set hlsearch
+set ttimeout        " time out for key codes
+set ttimeoutlen=0 " wait up to 0ms after Esc for special key
 
 highlight Comment ctermfg=green
 
@@ -35,14 +37,15 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'majutsushi/tagbar'
-Plug 'preservim/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'flazz/vim-colorschemes'
-Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -52,19 +55,17 @@ let mapleader = ','
 
 nnoremap <leader>d :NERDTreeToggle<CR>
 
-nnoremap <leader>t :TagbarToggle<CR>
+nnoremap <leader>r :TagbarToggle<CR>
 
-nnoremap <leader>x :sh<CR>
+nnoremap <leader>z :sh<CR>
 
-nnoremap <leader>h :noh<CR>
+nnoremap <leader>f :Rg<CR>
 
-nnoremap <leader>A :Ag<CR>
+nnoremap <leader>c :Commits<CR>
 
-nnoremap <leader>R :Rg<CR>
+nnoremap <leader>t :Tags<CR>
 
-nnoremap <leader>C :Commits<CR>
-
-nnoremap <leader>T :Tags<CR>
+nnoremap <leader>y :<C-u>CocList -A --normal yank<CR>
 
 let g:tagbar_width=27
 
@@ -91,7 +92,7 @@ set nobackup
 set nowritebackup
 
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " " delays and poor user experience.
@@ -169,8 +170,8 @@ endfunction
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+"xmap <leader>f  <Plug>(coc-format-selected)
+"nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
     autocmd!
@@ -238,3 +239,5 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+autocmd FileType S,s,asm setlocal commentstring=#\ %s
