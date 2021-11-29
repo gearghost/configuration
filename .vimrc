@@ -240,4 +240,8 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+"highlight Jenkinsfile with groovy syntax
+au BufNewFile,BufRead Jenkinsfile setf groovy
+
+"vim-commentary for assembly file
 autocmd FileType S,s,asm setlocal commentstring=#\ %s
