@@ -37,7 +37,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
@@ -51,9 +50,10 @@ call plug#end()
 
 filetype plugin indent on
 
+"key shortcut
 let mapleader = ','
 
-nnoremap <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>d :Explore<CR>
 
 nnoremap <leader>r :TagbarToggle<CR>
 
@@ -63,24 +63,37 @@ nnoremap <leader>f :Rg<CR>
 
 nnoremap <leader>c :Commits<CR>
 
+nnoremap <leader>h :History<CR>
+
 nnoremap <leader>t :Tags<CR>
 
 nnoremap <leader>y :<C-u>CocList -A --normal yank<CR>
 
-let g:tagbar_width=27
+"simulate ctrl-p shortcut
+nnoremap <C-p> :Files<CR>
 
-let g:go_def_mode = 'gopls'
-let g:go_info_mode = 'gopls'
-let g:go_debug_log_output = ''
-
-let g:NERDSpaceDelims=1
-
+"vim op shortcut
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-nnoremap <C-p> :Files<CR>
+"tagbar configuration
+let g:tagbar_width=27
 
+"vim-go configuration
+let g:go_def_mode = 'gopls'
+let g:go_info_mode = 'gopls'
+let g:go_debug_log_output = ''
 let g:go_template_autocreate = 0
+
+"netrw configuration
+let g:netrw_liststyle = 3
+let g:netrw_list_hide= '.*\.swp$,.DS_Store,*/tmp/*,*.so,*.swp,*.zip,*.git,^\.\.\=/\=$'
+
+"highlight Jenkinsfile with groovy syntax
+au BufNewFile,BufRead Jenkinsfile setf groovy
+
+"vim-commentary for assembly file
+autocmd FileType S,s,asm setlocal commentstring=#\ %s
 
 "==================coc.nvim====================
 
@@ -239,9 +252,3 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
-"highlight Jenkinsfile with groovy syntax
-au BufNewFile,BufRead Jenkinsfile setf groovy
-
-"vim-commentary for assembly file
-autocmd FileType S,s,asm setlocal commentstring=#\ %s
