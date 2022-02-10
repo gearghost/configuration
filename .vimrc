@@ -21,11 +21,12 @@ set incsearch
 set ai
 set hlsearch
 set ttimeout        " time out for key codes
-set ttimeoutlen=0 " wait up to 0ms after Esc for special key
+set ttimeoutlen=10 " wait up to 0ms after Esc for special key
+set relativenumber
 
 highlight Comment ctermfg=green
 
-colorscheme 0x7A69_dark
+colorscheme Atelier_SeasideDark
 set nocompatible
 filetype off
 
@@ -39,6 +40,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'rust-lang/rust.vim'
 
 Plug 'majutsushi/tagbar'
 
@@ -53,6 +55,8 @@ filetype plugin indent on
 
 "key shortcut
 let mapleader = ','
+
+nnoremap <leader>b :Buffers<CR>
 
 nnoremap <leader>d :Explore<CR>
 
@@ -70,8 +74,9 @@ nnoremap <leader>t :Tags<CR>
 
 nnoremap <leader>y :<C-u>CocList -A --normal yank<CR>
 
-"simulate ctrl-p shortcut
+"fzf.vim configuration
 nnoremap <C-p> :Files<CR>
+let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 "vim op shortcut
 vnoremap J :m '>+1<CR>gv=gv
@@ -86,15 +91,22 @@ let g:go_info_mode = 'gopls'
 let g:go_debug_log_output = ''
 let g:go_template_autocreate = 0
 
+"rust.vim configuration
+let g:rustfmt_autosave = 1
+
 "netrw configuration
 let g:netrw_liststyle = 3
-let g:netrw_list_hide= '.*\.swp$,.DS_Store,*/tmp/*,*.so,*.swp,*.zip,*.git,^\.\.\=/\=$'
+let g:netrw_list_hide= '.*\.swp$,.DS_Store,*/tmp/*,*.swp,*.zip,^\.git/$'
 
 "highlight Jenkinsfile with groovy syntax
 au BufNewFile,BufRead Jenkinsfile setf groovy
 
 "vim-commentary for assembly file
 autocmd FileType S,s,asm setlocal commentstring=#\ %s
+
+"airline integration
+let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#coc#show_coc_status = 1
 
 "==================coc.nvim====================
 
@@ -129,6 +141,7 @@ endif
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
+    \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
     \ <SID>check_back_space() ? "\<TAB>" :
     \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
@@ -137,6 +150,8 @@ function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 " Use <c-space> to trigger completion.
 if has('nvim')
