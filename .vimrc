@@ -105,6 +105,7 @@ au BufNewFile,BufRead Jenkinsfile setf groovy
 autocmd FileType S,s,asm setlocal commentstring=#\ %s
 
 "airline integration
+let g:airline_theme='mono'
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#coc#show_coc_status = 1
 
