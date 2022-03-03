@@ -37,5 +37,6 @@
       ".venv",
       "__pycache__",
       "venv"
-    ]
+    ],
+    "rust-analyzer.inlayHints.refreshOnInsertMode":true
 }
