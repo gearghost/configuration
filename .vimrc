@@ -39,6 +39,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
 
@@ -108,6 +109,13 @@ autocmd FileType S,s,asm setlocal commentstring=#\ %s
 let g:airline_theme='mono'
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#coc#show_coc_status = 1
+
+"coc extensions
+let g:coc_global_extensions = ['coc-clangd','coc-cmake',
+      \'coc-css','coc-git','coc-go','coc-highlight','coc-html','coc-java','coc-jedi',
+      \'coc-json','coc-lists','coc-markdownlint','coc-rust-analyzer','coc-sh',
+      \'coc-snippets','coc-sql','coc-syntax','coc-toml','coc-tsserver','coc-xml',
+      \'coc-yaml','coc-yank']
 
 "==================coc.nvim====================
 

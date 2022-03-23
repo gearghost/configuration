@@ -5,7 +5,7 @@
     "go.goplsOptions":{
         "completeUnimported":true
     },
-    "clangd.path": "/Users/gearghost/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd",
     "markdownlint.config":{
       "default": true,
       "line_length": false
@@ -38,5 +38,9 @@
       "__pycache__",
       "venv"
     ],
-    "rust-analyzer.inlayHints.refreshOnInsertMode":true
+    "rust-analyzer.inlayHints.refreshOnInsertMode":true,
+    "snippets.ultisnips.directories": [
+      "UltiSnips",
+      "gosnippets/UltiSnips"
+    ]
 }
