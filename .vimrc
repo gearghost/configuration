@@ -59,8 +59,6 @@ let mapleader = ','
 
 nnoremap <leader>b :Buffers<CR>
 
-nnoremap <leader>d :Explore<CR>
-
 nnoremap <leader>r :TagbarToggle<CR>
 
 nnoremap <leader>z :sh<CR>
