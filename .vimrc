@@ -9,7 +9,6 @@ set shiftwidth=2
 set expandtab
 set softtabstop=2
 set showmatch
-set laststatus=2
 set ruler
 set noerrorbells
 set encoding=utf-8
@@ -25,25 +24,22 @@ set ttimeoutlen=10 " wait up to 0ms after Esc for special key
 set relativenumber
 
 highlight Comment ctermfg=green
+highlight LineNr ctermfg=grey
 
-colorscheme Atelier_SeasideDark
 set nocompatible
 filetype off
 
 call plug#begin ('~/.vim/plugged')
 
-Plug 'flazz/vim-colorschemes'
-Plug 'vim-airline/vim-airline'
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+Plug 'majutsushi/tagbar'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
-
-Plug 'majutsushi/tagbar'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -54,7 +50,7 @@ call plug#end()
 
 filetype plugin indent on
 
-"key shortcut
+" key shortcut
 let mapleader = ','
 
 nnoremap <leader>b :Buffers<CR>
@@ -73,42 +69,36 @@ nnoremap <leader>t :Tags<CR>
 
 nnoremap <leader>y :<C-u>CocList -A --normal yank<CR>
 
-"fzf.vim configuration
-nnoremap <C-p> :Files<CR>
-let $FZF_DEFAULT_COMMAND = 'rg --files'
-
-"vim op shortcut
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-"tagbar configuration
+" fzf.vim configuration
+nnoremap <C-p> :Files<CR>
+let $FZF_DEFAULT_COMMAND = 'rg --files'
+
+" tagbar configuration
 let g:tagbar_width=27
 
-"vim-go configuration
+" vim-go configuration
 let g:go_def_mode = 'gopls'
 let g:go_info_mode = 'gopls'
 let g:go_debug_log_output = ''
 let g:go_template_autocreate = 0
 
-"rust.vim configuration
+" rust.vim configuration
 let g:rustfmt_autosave = 1
 
-"netrw configuration
+" netrw configuration
 let g:netrw_liststyle = 3
 let g:netrw_list_hide= '.*\.swp$,.DS_Store,*/tmp/*,*.swp,*.zip,^\.git/$'
 
-"highlight Jenkinsfile with groovy syntax
+" highlight Jenkinsfile with groovy syntax
 au BufNewFile,BufRead Jenkinsfile setf groovy
 
-"vim-commentary for assembly file
+" vim-commentary for assembly file
 autocmd FileType S,s,asm setlocal commentstring=#\ %s
 
-"airline integration
-let g:airline_theme='mono'
-let g:airline#extensions#coc#enabled = 1
-let g:airline#extensions#coc#show_coc_status = 1
-
-"coc extensions
+" coc extensions
 let g:coc_global_extensions = ['coc-clangd','coc-cmake',
       \'coc-css','coc-git','coc-go','coc-highlight','coc-html','coc-java','coc-jedi',
       \'coc-json','coc-lists','coc-markdownlint','coc-rust-analyzer','coc-sh',
