@@ -98,6 +98,9 @@ au BufNewFile,BufRead Jenkinsfile setf groovy
 " vim-commentary for assembly file
 autocmd FileType S,s,asm setlocal commentstring=#\ %s
 
+" disable automatic comment insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " coc extensions
 let g:coc_global_extensions = ['coc-clangd','coc-cmake',
       \'coc-css','coc-git','coc-go','coc-highlight','coc-html','coc-java','coc-jedi',
