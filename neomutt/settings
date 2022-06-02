@@ -1,0 +1,37 @@
+set ssl_starttls = yes
+set ssl_force_tls = yes
+set ssl_use_tlsv1_1 = no
+set ssl_use_tlsv1_2 = yes
+set ssl_verify_dates = yes
+set ssl_verify_host = yes
+set abort_nosubject = no
+set timeout = 60
+set editor = vim
+set menu_scroll = yes
+set charset = "utf-8"
+set send_charset = "utf-8"
+
+# html email
+set mailcap_path = ~/.neomutt/mailcap
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+unset imap_passive
+set imap_keepalive = 300
+set mail_check = 60
+
+set sleep_time=0 # be faster
+set beep=no # no beep sound
+auto_view text/html
+set sort=reverse-date   # default sorting by date
+set sort_aux=last-date-received
+set index_format="%4C %Z %{%b %d %R} %-15.15L (%?l?%4l&%4c?) %s"
+
+
+set sidebar_visible
+set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+
+# Cache
+set header_cache = "~/.neomutt/cache/headers"
+set message_cachedir = "~/.neomutt/cache/bodies"

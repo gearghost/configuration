@@ -1,0 +1,10 @@
+# settings
+source ~/.neomutt/settings
+# colors
+source ~/.neomutt/colors
+# mappings
+source ~/.neomutt/mappings
+
+# accounts
+source ~/.neomutt/accounts/hotmail
+folder-hook $folder 'source ~/.neomutt/accounts/hotmail'

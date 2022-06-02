@@ -1,0 +1,18 @@
+set realname = "Mono Q"
+
+# decrypt password
+source "gpg -d ~/.neomutt/password.gpg |"
+
+set from="palhwang@live.com"
+
+set imap_user = "palhwang@live.com"
+
+set smtp_url = "smtp://palhwang@live.com@smtp.office365.com:587"
+
+set folder="imaps://outlook.office365.com/"
+
+set spoolfile="+Inbox"
+set postponed = "+Drafts"
+set record = "+Sent"
+
+mailboxes $spoolfile $postponed $record

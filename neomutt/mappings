@@ -1,0 +1,17 @@
+# Vim like binds
+bind pager g top
+bind pager G bottom
+bind attach,index g first-entry
+bind attach,index G last-entry
+bind pager l next-entry
+bind pager h previous-entry
+bind pager j next-line
+bind pager k previous-line
+
+# Sidebar binds
+bind index,pager \Ck sidebar-prev                 # Ctrl-n to select next folder
+bind index,pager \Cj sidebar-next                 # Ctrl-p to select previous folder
+bind index,pager \Ci sidebar-open                 # Ctrl-o to open selected folder
+bind index,pager \Cb sidebar-toggle-visible       # Ctrl-b to toggle visibility of the sidebar
+
+bind index R imap-fetch-mail
