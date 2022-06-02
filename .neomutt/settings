@@ -11,6 +11,7 @@ set editor = vim
 set menu_scroll = yes
 set charset = "utf-8"
 set send_charset = "utf-8"
+set copy = no
 
 # html email
 set mailcap_path = ~/.neomutt/mailcap
