@@ -11,7 +11,7 @@ bind pager k previous-line
 # Sidebar binds
 bind index,pager \Ck sidebar-prev                 # Ctrl-n to select next folder
 bind index,pager \Cj sidebar-next                 # Ctrl-p to select previous folder
-bind index,pager \Ci sidebar-open                 # Ctrl-o to open selected folder
+bind index,pager \Ci sidebar-open                 # Ctrl-i to open selected folder
 bind index,pager \Cb sidebar-toggle-visible       # Ctrl-b to toggle visibility of the sidebar
 
 bind index R imap-fetch-mail

@@ -1,4 +1,4 @@
-set smtp_authenticators="login"
+set smtp_authenticators = "login"
 set ssl_starttls = yes
 set ssl_force_tls = yes
 set ssl_use_tlsv1_1 = no
@@ -22,16 +22,16 @@ unset imap_passive
 set imap_keepalive = 300
 set mail_check = 60
 
-set sleep_time=0 # be faster
-set beep=no # no beep sound
+set sleep_time = 0 # be faster
+set beep = no # no beep sound
 auto_view text/html
-set sort=reverse-date   # default sorting by date
-set sort_aux=last-date-received
-set index_format="%4C %Z %{%b %d %R} %-15.15L (%?l?%4l&%4c?) %s"
+set sort = reverse-date   # default sorting by date
+set sort_aux = last-date-received
+set index_format = "%4C %Z %{%b %d %R} %-15.15L (%?l?%4l&%4c?) %s"
 
 
 set sidebar_visible
-set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats
 
 # Cache
