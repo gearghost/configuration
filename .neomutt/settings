@@ -1,3 +1,4 @@
+set smtp_authenticators="login"
 set ssl_starttls = yes
 set ssl_force_tls = yes
 set ssl_use_tlsv1_1 = no
