@@ -1,24 +1,17 @@
 -- basics
-vim.opt.syntax = 'on'
-vim.opt.encoding = 'utf-8'
 vim.opt.pastetoggle = '<F11>'
 vim.opt.errorbells = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.showmode = true
-vim.opt.showcmd = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.showmatch = true
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
 vim.opt.smartcase = true
-vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.wrap = false
-vim.opt.ruler = true
 vim.opt.ttimeout = true -- time out for key codes
 vim.opt.ttimeoutlen = 10 -- wait up to 10ms after Esc for special key
 vim.opt.termguicolors = false -- disable true code support within neovim
