@@ -37,11 +37,8 @@ vim.g['netrw_liststyle'] = 3
 vim.g['netrw_list_hide'] = '.*\\.swp$,.DS_Store,*/tmp/*,*.swp,*.zip,^\\.git/$'
 
 -- highlight Jenkinsfile with groovy syntax
+vim.api.nvim_create_autocmd({"BufNewFile","BufRead"},{pattern = {"Jenkinsfile"},command = "setf groovy",})
 -- vim-commentary for assembly file
+vim.api.nvim_create_autocmd({"FileType"},{pattern = {"S","s","asm"}, command = "setlocal commentstring=#\\ %s",})
 -- disable automatic comment insertion
-vim.api.nvim_exec(
-[[
-  autocmd BufNewFile,BufRead Jenkinsfile setf groovy
-  autocmd FileType S,s,asm setlocal commentstring=#\ %s
-  autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-]],false)
+vim.api.nvim_create_autocmd({"FileType"},{pattern = {"*"}, command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o",})
