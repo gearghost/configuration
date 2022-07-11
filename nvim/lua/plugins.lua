@@ -3,9 +3,6 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin','~/.config/nvim/plugged')
 
-Plug('junegunn/fzf', {['do'] = vim.fn['fzf#install()']})
-Plug('junegunn/fzf.vim')
-
 -- lsp and code completion
 Plug('neovim/nvim-lspconfig')
 Plug('hrsh7th/cmp-nvim-lsp')
@@ -19,6 +16,9 @@ Plug('hrsh7th/cmp-vsnip')
 Plug('hrsh7th/vim-vsnip')
 
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn['TSUpdate']})
+
+Plug('nvim-lua/plenary.nvim')
+Plug('nvim-telescope/telescope.nvim')
 
 Plug('tpope/vim-fugitive')
 Plug('tpope/vim-surround')

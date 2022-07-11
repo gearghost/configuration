@@ -26,10 +26,13 @@ vim.api.nvim_exec(
 ]],false)
 
 -- vim-plug plugins
-require 'plugins'
+require('plugins')
 
 -- import lsp configuration
-require 'lsp_config'
+require('lsp_config')
+
+-- import telescope configuration
+require('telescope_config')
 
 -- keybindings
-require 'keybindings'
+require('keybindings')
