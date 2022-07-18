@@ -36,9 +36,20 @@ vim.cmd('command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number
 vim.g['netrw_liststyle'] = 3
 vim.g['netrw_list_hide'] = '.*\\.swp$,.DS_Store,*/tmp/*,*.swp,*.zip,^\\.git/$'
 
+-- create filetype_ops autogroup
+local ft_ops = vim.api.nvim_create_augroup("filetype_ops",{clear = true})
 -- highlight Jenkinsfile with groovy syntax
-vim.api.nvim_create_autocmd({"BufNewFile","BufRead"},{pattern = {"Jenkinsfile"},command = "setf groovy",})
+vim.api.nvim_create_autocmd({"BufNewFile","BufRead"},{
+  group = ft_ops,
+  pattern = {"Jenkinsfile"},
+  command = "setf groovy",})
 -- vim-commentary for assembly file
-vim.api.nvim_create_autocmd({"FileType"},{pattern = {"S","s","asm"}, command = "setlocal commentstring=#\\ %s",})
+vim.api.nvim_create_autocmd({"FileType"},{
+  group = ft_ops,
+  pattern = {"S","s","asm"},
+  command = "setlocal commentstring=#\\ %s",})
 -- disable automatic comment insertion
-vim.api.nvim_create_autocmd({"FileType"},{pattern = {"*"}, command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o",})
+vim.api.nvim_create_autocmd({"FileType"}, {
+  group = ft_ops,
+  pattern = {"*"},
+  command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o",})
