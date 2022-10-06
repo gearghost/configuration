@@ -23,6 +23,12 @@ vim.api.nvim_exec(
   highlight LineNr ctermfg=grey guifg=grey
   highlight Pmenu ctermfg=black ctermbg=white guifg=black guibg=white
   highlight Pmenusel ctermfg=green ctermbg=blue guifg=green guibg=blue
+  highlight TelescopeNormal ctermbg=black
+  highlight TelescopeMatching ctermfg=red
+  highlight TelescopePromptPrefix ctermfg=green
+  highlight TelescopeSelection ctermfg=black ctermbg=white cterm=bold
+  highlight TelescopeMultiSelection ctermfg=black ctermbg=white cterm=bold
+  highlight TelescopeSelectionCaret ctermfg=black ctermbg=white
 ]],false)
 
 -- vim-plug plugins
