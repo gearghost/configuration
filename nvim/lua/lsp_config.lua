@@ -99,10 +99,10 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'sumneko_lua', 'jedi_language_server', 'rust_analyzer', 'tsserver', 'clangd', 'gopls', 'bashls' }
+local servers = { 'lua_ls', 'jedi_language_server', 'rust_analyzer', 'tsserver', 'clangd', 'gopls', 'bashls' }
 for _, lsp in pairs(servers) do
   -- for lua lsp server
-	if (lsp == 'sumneko_lua')
+	if (lsp == 'lua_ls')
 	then
     require('lspconfig')[lsp].setup {
       capabilities = capabilities,
