@@ -1,5 +1,5 @@
 -- basics
-vim.opt.pastetoggle = '<F11>'
+-- vim.opt.pastetoggle = '<F11>'
 vim.opt.errorbells = false
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -17,7 +17,7 @@ vim.opt.ttimeoutlen = 10 -- wait up to 10ms after Esc for special key
 vim.opt.termguicolors = false -- disable true code support within neovim
 
 -- highlights
-vim.api.nvim_exec(
+vim.api.nvim_exec2(
 [[
   highlight Comment ctermfg=green guifg=green
   highlight LineNr ctermfg=grey guifg=grey
@@ -29,7 +29,7 @@ vim.api.nvim_exec(
   highlight TelescopeSelection ctermfg=black ctermbg=white cterm=bold
   highlight TelescopeMultiSelection ctermfg=black ctermbg=white cterm=bold
   highlight TelescopeSelectionCaret ctermfg=black ctermbg=white
-]],false)
+]],{})
 
 -- vim-plug plugins
 require('plugins')

@@ -1,6 +1,8 @@
 -- key shortcut
 vim.g.mapleader= ','
 
+vim.keymap.set('n','<Leader>r',':copen<Enter>')
+vim.keymap.set('n','<Leader>x',':cclose<Enter>')
 vim.keymap.set('v','J',':m \'>+1<CR>gv=gv')
 vim.keymap.set('v','K',':m \'<-2<CR>gv=gv')
 
@@ -12,7 +14,7 @@ end)
 vim.keymap.set('n','<Leader>b',function ()
   tsc.buffers()
 end)
-vim.keymap.set('n','<Leader>f',function ()
+vim.keymap.set('n','<Leader>g',function ()
   tsc.live_grep()
 end)
 vim.keymap.set('n','<Leader>c',function ()
