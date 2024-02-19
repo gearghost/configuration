@@ -21,8 +21,8 @@ vim.api.nvim_exec2(
 [[
   highlight Comment ctermfg=green guifg=green
   highlight LineNr ctermfg=grey guifg=grey
-  highlight Pmenu ctermfg=black ctermbg=white guifg=black guibg=white
-  highlight Pmenusel ctermfg=green ctermbg=blue guifg=green guibg=blue
+  highlight Pmenu ctermfg=grey ctermbg=black guifg=black guibg=white
+  highlight Pmenusel ctermfg=black ctermbg=grey guifg=green guibg=blue
   highlight TelescopeNormal ctermbg=black
   highlight TelescopeMatching ctermfg=red
   highlight TelescopePromptPrefix ctermfg=green
