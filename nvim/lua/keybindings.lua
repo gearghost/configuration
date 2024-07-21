@@ -5,6 +5,8 @@ vim.keymap.set('n','<Leader>r',':copen<Enter>')
 vim.keymap.set('n','<Leader>x',':cclose<Enter>')
 vim.keymap.set('v','J',':m \'>+1<CR>gv=gv')
 vim.keymap.set('v','K',':m \'<-2<CR>gv=gv')
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "<Leader>f", "<CMD>Oil --float<CR>", { desc = "Open float parent directory" })
 
 local tsc = require('telescope.builtin')
 

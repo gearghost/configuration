@@ -17,6 +17,8 @@ Plug('hrsh7th/vim-vsnip')
 
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn['TSUpdate']})
 
+Plug('nvim-tree/nvim-web-devicons')
+
 Plug('nvim-lua/plenary.nvim')
 Plug('nvim-telescope/telescope.nvim')
 
@@ -24,6 +26,8 @@ Plug('tpope/vim-fugitive')
 Plug('tpope/vim-surround')
 Plug('tpope/vim-repeat')
 Plug('tpope/vim-commentary')
+
+Plug('stevearc/oil.nvim')
 
 vim.call('plug#end')
 -- @vim-plug
@@ -53,3 +57,14 @@ vim.api.nvim_create_autocmd({"FileType"}, {
   group = ft_ops,
   pattern = {"*"},
   command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o",})
+
+-- for oil.nvim --
+require("oil").setup({
+   default_file_explorer = true,
+   columns = {
+    "icon",
+    -- "permissions",
+    -- "size",
+    -- "mtime",
+  },
+})
