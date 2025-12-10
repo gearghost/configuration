@@ -29,6 +29,8 @@ Plug('tpope/vim-commentary')
 
 Plug('stevearc/oil.nvim')
 
+Plug('ntpeters/vim-better-whitespace')
+
 vim.call('plug#end')
 -- @vim-plug
 

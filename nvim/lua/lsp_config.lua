@@ -99,12 +99,12 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'lua_ls', 'jedi_language_server', 'rust_analyzer', 'tsserver', 'clangd', 'gopls', 'bashls' }
+local servers = { 'lua_ls', 'jedi_language_server', 'rust_analyzer', 'ts_ls', 'clangd', 'gopls', 'bashls' }
 for _, lsp in pairs(servers) do
   -- for lua lsp server
 	if (lsp == 'lua_ls')
 	then
-    require('lspconfig')[lsp].setup {
+    vim.lsp.config(lsp, {
       capabilities = capabilities,
       on_attach = on_attach,
       flags = {
@@ -131,15 +131,16 @@ for _, lsp in pairs(servers) do
         },
       },
     },
-  }
+  })
 	else
-    require('lspconfig')[lsp].setup {
+    vim.lsp.config(lsp, {
       capabilities = capabilities,
       on_attach = on_attach,
       flags = {
         -- This will be the default in neovim 0.7+
         debounce_text_changes = 150,
       }
-    }
+    })
 	end
+    vim.lsp.enable({lsp})
 end

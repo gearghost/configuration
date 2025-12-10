@@ -31,3 +31,19 @@ end)
 vim.keymap.set('n','<Leader>?',function ()
   tsc.help_tags()
 end)
+
+-- Toggle paste mode with F2 key
+vim.api.nvim_set_keymap('n', '<F2>', ':set paste!<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<F2>', '<Esc>:set paste!<CR>i', { noremap = true, silent = true })
+
+-- Optional: Display a notification when paste mode is active
+vim.api.nvim_create_autocmd('OptionSet', {
+  pattern = 'paste',
+  callback = function()
+    if vim.opt.paste:get() then
+      vim.notify('PASTE mode active', vim.log.levels.INFO, {})
+    else
+      vim.notify('PASTE mode disabled', vim.log.levels.INFO, {})
+    end
+  end
+})

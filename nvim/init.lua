@@ -1,5 +1,4 @@
 -- basics
--- vim.opt.pastetoggle = '<F11>'
 vim.opt.errorbells = false
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -17,19 +16,17 @@ vim.opt.ttimeoutlen = 10 -- wait up to 10ms after Esc for special key
 vim.opt.termguicolors = false -- disable true code support within neovim
 
 -- highlights
-vim.api.nvim_exec2(
-[[
-  highlight Comment ctermfg=green guifg=green
-  highlight LineNr ctermfg=grey guifg=grey
-  highlight Pmenu ctermfg=grey ctermbg=black guifg=black guibg=white
-  highlight Pmenusel ctermfg=black ctermbg=grey guifg=green guibg=blue
-  highlight TelescopeNormal ctermbg=black
-  highlight TelescopeMatching ctermfg=red
-  highlight TelescopePromptPrefix ctermfg=green
-  highlight TelescopeSelection ctermfg=black ctermbg=white cterm=bold
-  highlight TelescopeMultiSelection ctermfg=black ctermbg=white cterm=bold
-  highlight TelescopeSelectionCaret ctermfg=black ctermbg=white
-]],{})
+vim.api.nvim_set_hl(0, 'Comment', { ctermfg = 'green' })
+vim.api.nvim_set_hl(0, 'LineNr', { ctermfg = 'grey' })
+vim.api.nvim_set_hl(0, 'Pmenu', { ctermfg = 'grey', ctermbg = 'black' })
+vim.api.nvim_set_hl(0, 'Pmenusel', { ctermfg = 'black', ctermbg = 'grey' })
+vim.api.nvim_set_hl(0, 'TelescopeNormal', { ctermbg = 'black' })
+vim.api.nvim_set_hl(0, 'TelescopeMatching', { ctermfg = 'red' })
+vim.api.nvim_set_hl(0, 'TelescopePromptPrefix', { ctermfg = 'green' })
+vim.api.nvim_set_hl(0, 'TelescopeSelection', { ctermfg = 'black', ctermbg = 'white'})
+vim.api.nvim_set_hl(0, 'TelescopeMultiSelection', { ctermfg = 'black', ctermbg = 'white'})
+vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { ctermfg = 'black', ctermbg = 'white' })
+vim.api.nvim_set_hl(0, 'ExtraWhitespace', { ctermbg = 'red' })
 
 -- vim-plug plugins
 require('plugins')
